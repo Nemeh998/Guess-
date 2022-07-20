@@ -11,10 +11,13 @@ aside{
 	width:calc(15% - 0px);
 	
 	padding-top:30px;
-	padding-left:10px;
+	padding-left:15px;
+	padding-right:15px;
 	top:0;
 	bottom:0;
-	background-color:#474958;
+	background-color:#84b4b1;
+	font-size: 19px;
+text-align: center;
 	z-index:400;
 }
 aside h1{
@@ -36,8 +39,9 @@ aside .aside-class ul li{
 header{
 	justify-content: center;
 	float:left;
-	left: 20%;
-	width:calc(80% - 0px);
+	left: 23%;
+	right: 20%;
+	width:calc(70% - 0px);
 	height:calc(15% - 0px);
 	padding-left:-webkit-calc(230px + 7%);
 	padding-top:30px;
@@ -61,9 +65,8 @@ main{
 	align-items: center;
 	margin-top: 150px;
 	float: left;
-	padding-left:calc(230px + 7%);
-	padding-left:-moz-calc(230px + 7%);
-	padding-left:-webkit-calc(230px + 7%);
+	padding-left:calc(600px + 7%);
+	
 	
 	display: grid;
 	grid-template-rows: repeat( auto-fit, minmax(1fr, 1fr) );
@@ -171,3 +174,6 @@ margin: 10px 55px 0px ;
 	width: 250px;
 	height: 300px;
 }
+/* @media  max-whh() {
+	
+} */
