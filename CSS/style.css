@@ -8,9 +8,10 @@
 aside{
 	position:fixed;
 	float:left;
-	width:205px;
+	width:calc(15% - 0px);
+	
 	padding-top:30px;
-	padding-left:25px;
+	padding-left:10px;
 	top:0;
 	bottom:0;
 	background-color:#474958;
@@ -27,19 +28,30 @@ aside .aside-class{
 }
 aside .aside-class ul li{
 	list-style: none;
-	padding: 15px 0;
+	padding: 15px 10px;
 	border-bottom: 1px solid white;
 }
 header{
 	float:left;
-	width:calc(93% - 230px);
+	width:calc(100% - 0px);
+	height:calc(20% - 0px);
 	padding-left:-webkit-calc(230px + 7%);
 	padding-top:30px;
 	padding-bottom:30px;
 	background-color:rgba(247, 247, 247, .9);
-	border-bottom:#2b99ff 2px solid;
+	/* border-bottom:#2b99ff 2px solid; */
 	position:fixed;
 	z-index:300;
+}
+header h1{
+	/* text-align: center; */
+	text-transform: uppercase ;
+	font-size: 3.125rem;
+	font-weight: 400;
+	letter-spacing: 3px;
+	line-height: .8;
+	/* padding-top: 50px; */
+	font-family: 'Montserrat', sans-serif;
 }
 main{
 	align-items: center;
@@ -49,17 +61,10 @@ main{
 	padding-left:-moz-calc(230px + 7%);
 	padding-left:-webkit-calc(230px + 7%);
 	margin-left: 5%;
+	display: grid;
+	grid-template-rows: repeat( auto-fit, minmax(1fr, 1fr) );
+
 }
-	h1{
-		/* text-align: center; */
-		text-transform: uppercase ;
-		font-size: 50px;
-		font-weight: 400;
-		letter-spacing: 3px;
-		line-height: .8;
-		/* padding-top: 50px; */
-		font-family: 'Montserrat', sans-serif;
-	}
 
 	form{
 		align-items: center;
@@ -110,7 +115,7 @@ input:focus {
 .contener{
 	/* margin-left:20%; */
 	display: grid;
-	grid-template-columns: 1fr 1fr  ;
+	grid-template-rows: 3fr 1fr  ;
 width: 560px;
   height: 280px;
 	border-radius: 5px;
@@ -122,7 +127,8 @@ width: 560px;
 }
  main .contener ul{
 	font-size: 25px;
-	
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
 list-style: none;
 	color:#ffffff;
 text-align: center;
@@ -131,14 +137,15 @@ justify-content: center;
 	background-color: #84b4b1;
 }
 main .contener ul li{
-
+border: 1px solid white;
+border: 1px solid white;
 	text-align: center;
 	align-items: center;
-	padding: 20px;
+	padding: 10px;
 }
 .contener img{
-	width: 250px;
-	height: 190px;
+	width: 50px;
+	height: 50px;
 	border-radius: 4px;
 }
 

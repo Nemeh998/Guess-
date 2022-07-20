@@ -9,7 +9,7 @@ function add(event){
 let deletespas=name1.trim ()
   console.log(name1)
   console.log(deletespas)
-  renderUsers(deletespas);
+  getDatafromApi(deletespas);
 
 }
 
@@ -58,18 +58,27 @@ async function getagify(userNum) {
 }
 
 
+//===========================
+// localStorage
+if( localStorage.getItem('data')===null){
+localStorage.setItem('data',JSON.stringify([]))
+  }
+
+let list=JSON.parse(localStorage.getItem('data'))
+
 function localDAta(Gender,name1,flags,age,country){
   this.name1=name1;
   this.Gender=Gender;
   this.age=age;
   this.flags=flags;
   this.country=country;
-  localDAta.all.push(this);
-  
+  // localDAta.all.push(this);
+  list.push(this)
   }
-  
-   localDAta.all=[];
- async function renderUsers(userNum) {
+  //بتصفر لللوكل ستورج
+  //  localDAta.all=[];
+  //
+ async function getDatafromApi(userNum) {
   console.log(userNum)
 let users = await getUsers(userNum);
  
@@ -88,15 +97,37 @@ console.log(users3.age,'age')
  let flags=users2[0].flags;
  let country=users.country[0].country_id;
 new localDAta(Gender,name,flags,age,country)
-localStorage.setItem('data',JSON.stringify(localDAta.all));
+localStorage.setItem('data',JSON.stringify(list));
 
 render(Gender,name,flags,age,country)
 }
 
+
+
 let contener=document.getElementById('contener')
 let said=document.getElementById('said')
+// 
+
+
+
+// render data
+let male='.img/male.webp';
+let female='img/female.png'
 function render(Genderdata,namedata,flagsdata,agedata,countrydata){
+  const div=document.createElement('div')
+  let img=document.createElement('img');
+  if(Genderdata==="male"){
+    img.src=male;
+    
+    
+  }else
+  {
+    img.src=female;
+    
+  }
+  div.appendChild(img)
   console.log(countrydata)
+  contener.appendChild(div)
  //================
   const ul=document.createElement('ul');
   contener.appendChild(ul)
@@ -115,43 +146,35 @@ const name=document.createElement('li')
 const nametext=document.createTextNode(namedata)
 name.appendChild(nametext)
 ul.appendChild(name)
-// ======================
-const div=document.createElement('div')
-contener.appendChild(div)
+// =================
+const flagsli=document.createElement('li')
+
 const flags=document.createElement('img')
 flags.setAttribute("src", flagsdata.png);
-div.appendChild(flags)
+flagsli.appendChild(flags)
+ul.appendChild(flagsli)
+// ======================
+const countryli=document.createElement('li')
 
 const country=document.createElement('h1')
 const countrytext=document.createTextNode(countrydata)
 country.appendChild(countrytext)
-div.appendChild(country)
-
+countryli.appendChild(country)
+ul.appendChild(countryli)
+// =======================
+///===============================
+//local storage
 const ul2=document.createElement('ul');
 said.appendChild(ul2)
-// 
-// let data=JSON.parse(localStorage.getItem('data'));
-// for(let i=0; i<data.length;i++){
+let data=JSON.parse(localStorage.getItem('data'));
+console.log(data)
+  for(let i=0; i<data.length;i++){
+  const name2=document.createElement('li')
+  const storagename=document.createTextNode(data[i].name1)
+  name2.appendChild(storagename)
+  ul2.appendChild(name2)
 
-  // var entryTime;
-  // if (localStorage.getItem('data')) {
-  //     entryTime = JSON.parse(localStorage.getItem('data'));
-  //     console.log(entryTime)
-  //   } else {
-      entryTime  = new localDAta().toLocaleTimeString();
-      localStorage.setItem('data', JSON.stringify(entryTime ));
-      
-      console.log(entryTime,"nemh")
-      
-      
-    // }
-    // for(let i=0; i<entryTime.length;i++){
-    // const name2=document.createElement('li')
-    // const storagename=document.createTextNode(entryTime[i].name1)
-    // name2.appendChild(storagename)
-    // ul2.appendChild(name2)
-
-// }
+}
 }
 
 
