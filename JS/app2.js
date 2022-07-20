@@ -111,8 +111,8 @@ let said=document.getElementById('said')
 
 
 // render data
-let male='.img/male.webp';
-let female='img/female.png'
+let male='./img/male.png';
+let female='./img/female.jpg'
 function render(Genderdata,namedata,flagsdata,agedata,countrydata){
   const div=document.createElement('div')
   let img=document.createElement('img');

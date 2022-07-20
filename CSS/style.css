@@ -20,6 +20,8 @@ aside{
 aside h1{
 	color: #EEEE;
 	font-size: 19px;
+	letter-spacing: 3px;
+
 }
 aside .aside-class{
 	color: white;
@@ -32,9 +34,11 @@ aside .aside-class ul li{
 	border-bottom: 1px solid white;
 }
 header{
+	justify-content: center;
 	float:left;
-	width:calc(100% - 0px);
-	height:calc(20% - 0px);
+	left: 20%;
+	width:calc(80% - 0px);
+	height:calc(15% - 0px);
 	padding-left:-webkit-calc(230px + 7%);
 	padding-top:30px;
 	padding-bottom:30px;
@@ -46,7 +50,7 @@ header{
 header h1{
 	/* text-align: center; */
 	text-transform: uppercase ;
-	font-size: 3.125rem;
+	font-size: 2.125rem;
 	font-weight: 400;
 	letter-spacing: 3px;
 	line-height: .8;
@@ -60,7 +64,7 @@ main{
 	padding-left:calc(230px + 7%);
 	padding-left:-moz-calc(230px + 7%);
 	padding-left:-webkit-calc(230px + 7%);
-	margin-left: 5%;
+	
 	display: grid;
 	grid-template-rows: repeat( auto-fit, minmax(1fr, 1fr) );
 
@@ -116,7 +120,7 @@ input:focus {
 	display: grid;
 	grid-template-rows: 3fr 1fr  ;
 width: 360px;
-  height: 480px;
+  height: 420px;
 	border-radius: 20px;
   gap: 5px;
   background: #5e647234;
@@ -156,4 +160,14 @@ font-size: 25px;
 	font-size: 25px;
 	color:rgba(255, 248, 248, 0.933);
 	/* font-weight: bolder; */
+}
+
+.contener div img{
+justify-content: center;
+padding: 20px;
+margin: 10px 55px 0px ;
+	align-items: center;
+	border-radius:50px;
+	width: 250px;
+	height: 300px;
 }
