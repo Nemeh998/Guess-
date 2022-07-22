@@ -1,4 +1,11 @@
 
+
+
+// form.addEventListener('delete',remove)
+// function remove(){
+
+// }
+
 let contener=document.getElementById('contener')
 //
 let containerDiv = document.createElement('div');
@@ -7,6 +14,7 @@ let male='./img/male.png';
 let female='./img/female.jpg'
 
 export function render(Genderdata,namedata,flagsdata,agedata,countrydata){
+containerDiv.innerHTML=''
     const div=document.createElement('div')
     let img=document.createElement('img');
   if(Genderdata==="male"){
@@ -54,8 +62,8 @@ country.appendChild(countrytext)
 countryli.appendChild(country)
 ul.appendChild(countryli)
 contener.appendChild(containerDiv)
-// remove()
 }
+ 
 
 
 export default render;

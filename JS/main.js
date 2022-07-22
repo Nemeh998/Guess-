@@ -7,11 +7,7 @@ let form=document.getElementById('form');
 
 form.addEventListener('submit',add);
 
-function remove(){
-  container.children.foreach((ellmenet)=> element.remove());
-container.appendChild(containerDiv)
-}
- async function add(event){
+async function add(event){
   event.preventDefault();
   let name1=form.name.value;
   //for speas 
@@ -22,23 +18,40 @@ let usersage = await getagify(name1);
 let userscountri = await getrestcountries(usersNational.country[0].country_id);
 
  let dataObject = {
-    name: usersNational.name, 
-    gender: usersgender.gender, 
-    age: usersage.age,
-    flags: userscountri[0].flags,
-    country :usersNational.country[0].country_id
- };
-
+   name: usersNational.name, 
+   gender: usersgender.gender, 
+   age: usersage.age,
+   flags: userscountri[0].flags,
+   country :usersNational.country[0].country_id
+  };
+  
 
 render(dataObject.gender,dataObject.name,dataObject.flags,dataObject.age,dataObject.country);
-localDAta(dataObject)
 
+localDAta(dataObject)
 }
+
+
+
+
+
 
 let said=document.getElementById('said')
 
+export async function load(){
+  //get from local storage
 
-
-
-
-
+  const ul=document.createElement('ul');
+  let data=JSON.parse(localStorage.getItem('data'));
+  console.log(data.name)
+  for(let i=0; i<data.length;i++){
+    const name2=document.createElement('li')
+    const storagename=document.createTextNode(data[i].name)
+    name2.appendChild(storagename)
+    ul.appendChild(name2)
+    said.appendChild(ul)
+    //call rende
+  }
+  
+}
+load()
