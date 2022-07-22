@@ -5,6 +5,7 @@ let containerDiv = document.createElement('div');
 // render data
 let male='./img/male.png';
 let female='./img/female.jpg'
+
 export function render(Genderdata,namedata,flagsdata,agedata,countrydata){
     const div=document.createElement('div')
     let img=document.createElement('img');
@@ -52,14 +53,9 @@ const countrytext=document.createTextNode(countrydata)
 country.appendChild(countrytext)
 countryli.appendChild(country)
 ul.appendChild(countryli)
-
-
 contener.appendChild(containerDiv)
-
+// remove()
 }
-// const item = document.querySelector('#itemId')
-// while (item.containerDiv) {
-//   item.removeChild(item.containerDiv)
-// }
+
 
 export default render;

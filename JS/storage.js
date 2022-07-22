@@ -1,25 +1,40 @@
 
-
+// import { load } from "./main.js";
 //===========================
 // localStorage
 
 
     function localDAta(dataObject){
 
-console.log(dataObject)
+
         if( localStorage.getItem('data')===null){
             localStorage.setItem('data',JSON.stringify([]))
               }
             
       let list=JSON.parse(localStorage.getItem('data'));
-      // localDAta.all.push(this);
+
       list.push(dataObject)
-
       localStorage.setItem('data',JSON.stringify(list));
-
+      console.log(list,"localstorage")
       }
       // بتصفر لللوكل ستورج
     //    localDAta.all=[];
+    export async function load(){
+      //get from local storage
+  
+      const ul=document.createElement('ul');
+      let data=JSON.parse(localStorage.getItem('data'));
+      console.log(data.name)
+      for(let i=0; i<data.length;i++){
+        const name2=document.createElement('li')
+        const storagename=document.createTextNode(data[i].name)
+        name2.appendChild(storagename)
+        ul.appendChild(name2)
+        said.appendChild(ul)
+        //call rende
+      }
       
+    }
+    load()
     export default localDAta;
-          // render()
+        

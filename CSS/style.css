@@ -46,6 +46,7 @@ header{
 	padding-left:25%;
 	padding-top:30px;
 	padding-bottom:30px;
+	align-items: center;
 	background-color:rgba(247, 247, 247, .9);
 	/* border-bottom:#2b99ff 2px solid; */
 	position:fixed;
@@ -67,7 +68,7 @@ main{
 	margin-top: 150px;
 	float: left;
 	/* padding-left:calc(600px + 7%); */
-	 padding-left:-webkit-calc(600px + 7%);
+	 padding: 1% 22% 1% 30%;
 display: grid;
 grid-template-rows: repeat(1,1fr);
 
@@ -123,7 +124,7 @@ input:focus {
 	display: grid;
 	grid-template-rows: 3fr 1fr  ;
 width: 360px;
-  height: 420px;
+  height: 381px;
 	border-radius: 20px;
   gap: 5px;
   background: #5e647234;
@@ -175,11 +176,10 @@ margin: 10px 55px 0px ;
 	width: 250px;
 	height: 300px;
 }
-@media screen and (max-width: 1290px) {
+@media screen and (max-width: 933px) {
 	main{
-
-		padding-left:calc(40%/2);
-		padding-right:calc(30%/2);
+padding:  1% 24% 1% 20%;
+	
 	}
 }
 

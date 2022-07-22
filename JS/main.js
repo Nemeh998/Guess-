@@ -2,10 +2,15 @@
 import {getagify, getgenderize, getrestcountries, getNationality} from './app.js';
 import localDAta from './storage.js';
 import  render  from './dom.js';
+
 let form=document.getElementById('form');
+
 form.addEventListener('submit',add);
 
-
+function remove(){
+  container.children.foreach((ellmenet)=> element.remove());
+container.appendChild(containerDiv)
+}
  async function add(event){
   event.preventDefault();
   let name1=form.name.value;
@@ -26,28 +31,13 @@ let userscountri = await getrestcountries(usersNational.country[0].country_id);
 
 
 render(dataObject.gender,dataObject.name,dataObject.flags,dataObject.age,dataObject.country);
-let datalod=localDAta(dataObject)
-load(datalod);
- 
+localDAta(dataObject)
+
 }
 
 let said=document.getElementById('said')
 
-async function load(){
-    //get from local storage
-  const ul=document.createElement('ul');
-  let data=JSON.parse(localStorage.getItem('data'));
-  console.log(data.name)
-for(let i=0; i<data.length;i++){
-  const name2=document.createElement('li')
-  const storagename=document.createTextNode(data[i].name)
-  name2.appendChild(storagename)
-  ul.appendChild(name2)
-  said.appendChild(said)
-    //call rende
-}
 
-}
 
 
 
